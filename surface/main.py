@@ -36,9 +36,10 @@ options = []
 
 for expiry in exps:
     chain = ticker.option_chain(expiry)
-    calls = chain.calls["strike":"lastPrice"]
-    puts = chain.puts["strike":"lastPrice"]
+    calls = [chain.calls["strike"], chain.calls["impliedVolatility"]]
+    puts = [chain.puts["strike"], chain.puts["impliedVolatility"]]
     options.append([calls, puts])
+
 
 
 
