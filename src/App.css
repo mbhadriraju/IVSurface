@@ -5,4 +5,7 @@ body {
   font-weight: 400;
   font-style: normal;
   background-color: black;
+  background-image: url("../public/wallpaper.jpg");
+  background-size: cover;
+  background-position: center;
 }

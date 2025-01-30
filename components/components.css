@@ -17,6 +17,20 @@
     height: 100vh;
 }
 
+button {
+    resize: none;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 40px;
+    margin-top: 50px;
+    padding: 10px;
+    height: 80px;
+    width: 225px;
+    font-family: "Quicksand", serif;
+    font-weight: 600;
+    background-color: grey;
+}
+
 textarea {
     resize: none;
     border-radius: 10px;

@@ -13,6 +13,7 @@ function Sidebar(props) {
             <textarea></textarea>
             <p>Time to Expiry Maximum:</p>
             <textarea></textarea>
+            <button>Enter</button>
         </div>
     )
 }
