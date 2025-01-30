@@ -15,24 +15,31 @@ def opt_price(S, K, r, t, sigma, q, call):
     return K * exp(-r * t) * norm.cdf(-d2) - S * exp(-q * t) * norm.cdf(-d1)
 
 def implied_vol(price, S, K, t, r, q, call):
-    init_sigma = 0.3
-    for i in range(200):
-        Cprime = S * norm.pdf((log(S / K) + ((r - q + ((init_sigma ** 2) / 2)) * t)) / (init_sigma * sqrt(t)))
-        C = opt_price(S, K, r, t, init_sigma, q, call) - price
-        new_sigma = init_sigma + (C / Cprime)
+    init_sigma = 0.1
+    for i in range(100):
+        Cprime = S * sqrt(t) * norm.pdf((log(S / K) + ((r - q + ((init_sigma ** 2) / 2)) * t)) / (init_sigma * sqrt(t)))
+        bs_price = opt_price(S, K, r, t, init_sigma, q, call)
+        C = bs_price - price
+        new_sigma = init_sigma - (C / Cprime)
         init_sigma = new_sigma
         if abs(init_sigma) < .001:
             return init_sigma
     return init_sigma
 
 
-ticker = yf.Ticker('SPY')
 
-prices_arr = np.array()
+ticker = yf.Ticker('SPY')
 
 exps = ticker.options
 
+options = []
+
 for expiry in exps:
     chain = ticker.option_chain(expiry)
-    calls = chain.calls
-    puts = chain.puts
+    calls = chain.calls["strike":"lastPrice"]
+    puts = chain.puts["strike":"lastPrice"]
+    options.append([calls, puts])
+
+
+
+
