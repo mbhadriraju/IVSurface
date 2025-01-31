@@ -5,6 +5,7 @@ import datetime as dt
 from scipy.optimize import brentq
 from math import log, sqrt, exp
 from scipy.stats import norm
+import matplotlib.pyplot as plt
 
 
 def opt_price(S, K, r, t, sigma, q, call):
@@ -36,13 +37,16 @@ options = []
 
 for expiry in exps:
     chain = ticker.option_chain(expiry)
-    calls = [chain.calls["strike"], chain.calls["impliedVolatility"]]
-    puts = [chain.puts["strike"], chain.puts["impliedVolatility"]]
-    options.append(calls)
-    options.append(puts)
+    for i in range(len(chain.calls["strike"])):
+        options.append([expiry, chain.calls["strike"][i], chain.calls["impliedVolatility"][i]])
+    for i in range(len(chain.puts["strike"])):
+        options.append([expiry, chain.puts["strike"][i], chain.puts["impliedVolatility"][i]])
 
 
-grid = []
+print(options[0])
+
+
+
 
 
 
