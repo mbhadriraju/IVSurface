@@ -2,13 +2,9 @@ import yfinance as yf
 import numpy as np
 from math import log, sqrt, exp
 from scipy.stats import norm
-import matplotlib.pyplot as plt
 from datetime import datetime, date
 from scipy.interpolate import SmoothBivariateSpline
-from flask import Flask, jsonify
-from flask_cors import CORS
 
-app = Flask(__name__)
 
 def opt_price(S, K, r, t, sigma, q, call):
     d1 = (log(S / K) + ((r - q + ((sigma ** 2) / 2)) * t)) / (sigma * sqrt(t))
@@ -74,10 +70,3 @@ def surface_plot(tick, str1, str2, d1, d2):
         "Z": Z
     }
     return data
-
-@app.route("/api/data", methods=['GET'])
-def send_data():
-    return jsonify(surface_plot())
-
-if __name__ == "__main__":
-    app.run(debug=True)

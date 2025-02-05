@@ -1,19 +1,38 @@
 import "./components.css";
+import { useState } from 'react';
+
+
 
 function Sidebar(props) {
+    const [asset, setAsset] = useState()
+    const [strikeMin, setStrikeMin] = useState()
+    const [strikeMax, setStrikeMax] = useState()
+    const [timeMin, setTimeMin] = useState()
+    const [timeMax, setTimeMax] = useState()
+
+    function exportData() {
+        return {
+            "asset": asset,
+            "strikeMin": strikeMin,
+            "strikeMax": strikeMax,
+            "timeMin": timeMin,
+            "timeMax": timeMax
+        }
+    }
+
     return (
         <div className="sidebar">
             <p>Asset:</p>
-            <textarea></textarea>
+            <input onChange={e => setAsset(e.target.value)}></input>
             <p>Strike Price Minimum:</p>
-            <textarea></textarea>
+            <input onChange={e => setStrikeMin(e.target.value)}></input>
             <p>Strike Price Maximum:</p>
-            <textarea></textarea>
+            <input onChange={e => setStrikeMax(e.target.value)}></input>
             <p>Time to Expiry Minimum:</p>
-            <textarea></textarea>
+            <input onChange={e => setTimeMin(e.target.value)}></input>
             <p>Time to Expiry Maximum:</p>
-            <textarea></textarea>
-            <button>Enter</button>
+            <input onChange={e => setTimeMax(e.target.value)}></input>
+            <button onClick={exportData()}>Enter</button>
         </div>
     )
 }
