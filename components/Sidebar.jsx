@@ -2,13 +2,13 @@ import "./components.css";
 import { useState } from 'react';
 
 
-
 function Sidebar(props) {
-    const [asset, setAsset] = useState()
-    const [strikeMin, setStrikeMin] = useState()
-    const [strikeMax, setStrikeMax] = useState()
-    const [timeMin, setTimeMin] = useState()
-    const [timeMax, setTimeMax] = useState()
+    
+    const [asset, setAsset] = useState();
+    const [strikeMin, setStrikeMin] = useState();
+    const [strikeMax, setStrikeMax] = useState();
+    const [timeMin, setTimeMin] = useState();
+    const [timeMax, setTimeMax] = useState();
 
     function exportData() {
         return JSON.stringify({

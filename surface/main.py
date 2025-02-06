@@ -4,6 +4,7 @@ from math import log, sqrt, exp
 from scipy.stats import norm
 from datetime import datetime, date
 from scipy.interpolate import SmoothBivariateSpline
+import json
 
 
 def opt_price(S, K, r, t, sigma, q, call):
@@ -64,9 +65,9 @@ def surface_plot(tick, str1, str2, d1, d2):
     spline = SmoothBivariateSpline(x, y, z)
 
     Z = spline(tx, ty)
-    data = {
+    data = json.dump({
         "X": X,
         "Y": Y,
         "Z": Z
-    }
+    })
     return data
