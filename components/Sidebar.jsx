@@ -11,13 +11,13 @@ function Sidebar(props) {
     const [timeMax, setTimeMax] = useState()
 
     function exportData() {
-        return {
+        return JSON.stringify({
             "asset": asset,
             "strikeMin": strikeMin,
             "strikeMax": strikeMax,
             "timeMin": timeMin,
             "timeMax": timeMax
-        }
+        });
     }
 
     return (
