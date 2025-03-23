@@ -1,60 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="1250"
-   height="2500"
-   id="svg2"
-   sodipodi:version="0.32"
-   inkscape:version="0.46dev+devel"
-   version="1.0"
-   sodipodi:docname="Times New Roman Greek small letter sigma.svg"
-   inkscape:output_extension="org.inkscape.output.svg.inkscape">
-  <defs
-     id="defs4" />
-  <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="0.0875"
-     inkscape:cx="-537.77823"
-     inkscape:cy="-54.406134"
-     inkscape:document-units="px"
-     inkscape:current-layer="layer1"
-     showgrid="false"
-     inkscape:showpageshadow="false"
-     inkscape:window-width="1280"
-     inkscape:window-height="1003"
-     inkscape:window-x="0"
-     inkscape:window-y="0" />
-  <metadata
-     id="metadata7">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <g
-     inkscape:label="Livello 1"
-     inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(532.14288,1359.0664)">
-    <path
-       style="font-size:2048px;font-style:normal;font-weight:normal;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:2;stroke-dashoffset:0;stroke-opacity:1;font-family:Times New Roman"
-       d="M 583.85712,-347.56641 L 583.85712,-201.56641 L 193.85712,-201.56641 C 279.18969,-152.89902 348.85629,-91.39908 402.85712,-17.066406 C 456.85618,57.267438 483.85615,136.10069 483.85712,219.43359 C 483.85615,328.1005 441.02286,418.10041 355.35712,489.43359 C 269.6897,560.76693 172.52313,596.43357 63.857117,596.43359 C -64.809964,596.43357 -175.80985,545.93362 -269.14288,444.93359 C -362.47633,343.93382 -409.14295,226.43394 -409.14288,92.433594 C -409.14295,-2.2325023 -384.64298,-85.899085 -335.64288,-158.56641 C -286.64308,-231.23227 -229.64313,-280.89889 -164.64288,-307.56641 C -99.643263,-334.23217 -11.810017,-347.56549 98.857117,-347.56641 L 583.85712,-347.56641 z M 126.85712,-201.56641 L 91.857117,-201.56641 C -8.1433543,-201.56564 -87.976608,-176.73233 -147.64288,-127.06641 C -207.30982,-77.399094 -237.14313,0.43416175 -237.14288,106.43359 C -237.14313,219.10061 -205.80982,318.60051 -143.14288,404.93359 C -80.476615,491.267 -7.1433553,534.43363 76.857117,534.43359 C 144.18983,534.43363 199.85644,501.93366 243.85712,436.93359 C 287.85635,371.93379 309.85633,293.43387 309.85712,201.43359 C 309.85633,55.434107 248.85639,-78.899092 126.85712,-201.56641 L 126.85712,-201.56641 z"
-       id="text2332" />
-  </g>
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1280" width="400" height="400">
+	<title>New Project</title>
+	<defs>
+		<image width="2500" height="5000" id="img1" href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhLS0gQ3JlYXRlZCB3aXRoIElua3NjYXBlIChodHRwOi8vd3d3Lmlua3NjYXBlLm9yZy8pIC0tPgo8c3ZnCiAgIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIKICAgeG1sbnM6Y2M9Imh0dHA6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL25zIyIKICAgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIgogICB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgogICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zOnNvZGlwb2RpPSJodHRwOi8vc29kaXBvZGkuc291cmNlZm9yZ2UubmV0L0RURC9zb2RpcG9kaS0wLmR0ZCIKICAgeG1sbnM6aW5rc2NhcGU9Imh0dHA6Ly93d3cuaW5rc2NhcGUub3JnL25hbWVzcGFjZXMvaW5rc2NhcGUiCiAgIHdpZHRoPSIxMjUwIgogICBoZWlnaHQ9IjI1MDAiCiAgIGlkPSJzdmcyIgogICBzb2RpcG9kaTp2ZXJzaW9uPSIwLjMyIgogICBpbmtzY2FwZTp2ZXJzaW9uPSIwLjQ2ZGV2K2RldmVsIgogICB2ZXJzaW9uPSIxLjAiCiAgIHNvZGlwb2RpOmRvY25hbWU9IlRpbWVzIE5ldyBSb21hbiBHcmVlayBzbWFsbCBsZXR0ZXIgc2lnbWEuc3ZnIgogICBpbmtzY2FwZTpvdXRwdXRfZXh0ZW5zaW9uPSJvcmcuaW5rc2NhcGUub3V0cHV0LnN2Zy5pbmtzY2FwZSI+CiAgPGRlZnMKICAgICBpZD0iZGVmczQiIC8+CiAgPHNvZGlwb2RpOm5hbWVkdmlldwogICAgIGlkPSJiYXNlIgogICAgIHBhZ2Vjb2xvcj0iI2ZmZmZmZiIKICAgICBib3JkZXJjb2xvcj0iIzY2NjY2NiIKICAgICBib3JkZXJvcGFjaXR5PSIxLjAiCiAgICAgaW5rc2NhcGU6cGFnZW9wYWNpdHk9IjAuMCIKICAgICBpbmtzY2FwZTpwYWdlc2hhZG93PSIyIgogICAgIGlua3NjYXBlOnpvb209IjAuMDg3NSIKICAgICBpbmtzY2FwZTpjeD0iLTUzNy43NzgyMyIKICAgICBpbmtzY2FwZTpjeT0iLTU0LjQwNjEzNCIKICAgICBpbmtzY2FwZTpkb2N1bWVudC11bml0cz0icHgiCiAgICAgaW5rc2NhcGU6Y3VycmVudC1sYXllcj0ibGF5ZXIxIgogICAgIHNob3dncmlkPSJmYWxzZSIKICAgICBpbmtzY2FwZTpzaG93cGFnZXNoYWRvdz0iZmFsc2UiCiAgICAgaW5rc2NhcGU6d2luZG93LXdpZHRoPSIxMjgwIgogICAgIGlua3NjYXBlOndpbmRvdy1oZWlnaHQ9IjEwMDMiCiAgICAgaW5rc2NhcGU6d2luZG93LXg9IjAiCiAgICAgaW5rc2NhcGU6d2luZG93LXk9IjAiIC8+CiAgPG1ldGFkYXRhCiAgICAgaWQ9Im1ldGFkYXRhNyI+CiAgICA8cmRmOlJERj4KICAgICAgPGNjOldvcmsKICAgICAgICAgcmRmOmFib3V0PSIiPgogICAgICAgIDxkYzpmb3JtYXQ+aW1hZ2Uvc3ZnK3htbDwvZGM6Zm9ybWF0PgogICAgICAgIDxkYzp0eXBlCiAgICAgICAgICAgcmRmOnJlc291cmNlPSJodHRwOi8vcHVybC5vcmcvZGMvZGNtaXR5cGUvU3RpbGxJbWFnZSIgLz4KICAgICAgPC9jYzpXb3JrPgogICAgPC9yZGY6UkRGPgogIDwvbWV0YWRhdGE+CiAgPGcKICAgICBpbmtzY2FwZTpsYWJlbD0iTGl2ZWxsbyAxIgogICAgIGlua3NjYXBlOmdyb3VwbW9kZT0ibGF5ZXIiCiAgICAgaWQ9ImxheWVyMSIKICAgICB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1MzIuMTQyODgsMTM1OS4wNjY0KSI+CiAgICA8cGF0aAogICAgICAgc3R5bGU9ImZvbnQtc2l6ZToyMDQ4cHg7Zm9udC1zdHlsZTpub3JtYWw7Zm9udC13ZWlnaHQ6bm9ybWFsO3RleHQtYWxpZ246Y2VudGVyO3RleHQtYW5jaG9yOm1pZGRsZTtmaWxsOiMwMDAwMDA7ZmlsbC1vcGFjaXR5OjE7ZmlsbC1ydWxlOm5vbnplcm87c3Ryb2tlOm5vbmU7c3Ryb2tlLXdpZHRoOjM7c3Ryb2tlLWxpbmVjYXA6YnV0dDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MjtzdHJva2UtZGFzaG9mZnNldDowO3N0cm9rZS1vcGFjaXR5OjE7Zm9udC1mYW1pbHk6VGltZXMgTmV3IFJvbWFuIgogICAgICAgZD0iTSA1ODMuODU3MTIsLTM0Ny41NjY0MSBMIDU4My44NTcxMiwtMjAxLjU2NjQxIEwgMTkzLjg1NzEyLC0yMDEuNTY2NDEgQyAyNzkuMTg5NjksLTE1Mi44OTkwMiAzNDguODU2MjksLTkxLjM5OTA4IDQwMi44NTcxMiwtMTcuMDY2NDA2IEMgNDU2Ljg1NjE4LDU3LjI2NzQzOCA0ODMuODU2MTUsMTM2LjEwMDY5IDQ4My44NTcxMiwyMTkuNDMzNTkgQyA0ODMuODU2MTUsMzI4LjEwMDUgNDQxLjAyMjg2LDQxOC4xMDA0MSAzNTUuMzU3MTIsNDg5LjQzMzU5IEMgMjY5LjY4OTcsNTYwLjc2NjkzIDE3Mi41MjMxMyw1OTYuNDMzNTcgNjMuODU3MTE3LDU5Ni40MzM1OSBDIC02NC44MDk5NjQsNTk2LjQzMzU3IC0xNzUuODA5ODUsNTQ1LjkzMzYyIC0yNjkuMTQyODgsNDQ0LjkzMzU5IEMgLTM2Mi40NzYzMywzNDMuOTMzODIgLTQwOS4xNDI5NSwyMjYuNDMzOTQgLTQwOS4xNDI4OCw5Mi40MzM1OTQgQyAtNDA5LjE0Mjk1LC0yLjIzMjUwMjMgLTM4NC42NDI5OCwtODUuODk5MDg1IC0zMzUuNjQyODgsLTE1OC41NjY0MSBDIC0yODYuNjQzMDgsLTIzMS4yMzIyNyAtMjI5LjY0MzEzLC0yODAuODk4ODkgLTE2NC42NDI4OCwtMzA3LjU2NjQxIEMgLTk5LjY0MzI2MywtMzM0LjIzMjE3IC0xMS44MTAwMTcsLTM0Ny41NjU0OSA5OC44NTcxMTcsLTM0Ny41NjY0MSBMIDU4My44NTcxMiwtMzQ3LjU2NjQxIHogTSAxMjYuODU3MTIsLTIwMS41NjY0MSBMIDkxLjg1NzExNywtMjAxLjU2NjQxIEMgLTguMTQzMzU0MywtMjAxLjU2NTY0IC04Ny45NzY2MDgsLTE3Ni43MzIzMyAtMTQ3LjY0Mjg4LC0xMjcuMDY2NDEgQyAtMjA3LjMwOTgyLC03Ny4zOTkwOTQgLTIzNy4xNDMxMywwLjQzNDE2MTc1IC0yMzcuMTQyODgsMTA2LjQzMzU5IEMgLTIzNy4xNDMxMywyMTkuMTAwNjEgLTIwNS44MDk4MiwzMTguNjAwNTEgLTE0My4xNDI4OCw0MDQuOTMzNTkgQyAtODAuNDc2NjE1LDQ5MS4yNjcgLTcuMTQzMzU1Myw1MzQuNDMzNjMgNzYuODU3MTE3LDUzNC40MzM1OSBDIDE0NC4xODk4Myw1MzQuNDMzNjMgMTk5Ljg1NjQ0LDUwMS45MzM2NiAyNDMuODU3MTIsNDM2LjkzMzU5IEMgMjg3Ljg1NjM1LDM3MS45MzM3OSAzMDkuODU2MzMsMjkzLjQzMzg3IDMwOS44NTcxMiwyMDEuNDMzNTkgQyAzMDkuODU2MzMsNTUuNDM0MTA3IDI0OC44NTYzOSwtNzguODk5MDkyIDEyNi44NTcxMiwtMjAxLjU2NjQxIEwgMTI2Ljg1NzEyLC0yMDEuNTY2NDEgeiIKICAgICAgIGlkPSJ0ZXh0MjMzMiIgLz4KICA8L2c+Cjwvc3ZnPgo="/>
+	</defs>
+	<style>
+	</style>
+	<use id="favicon" href="#img1" transform="matrix(.524,0,0,.524,-15,-892)"/>
 </svg>

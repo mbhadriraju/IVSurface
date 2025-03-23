@@ -1,12 +1,12 @@
 import './App.css';
-import "../components/Header.jsx"
 import Header from '../components/Header.jsx';
 import Sidebar from '../components/Sidebar.jsx';
-import "../components/components.css"
+import "../components/components.css";
+import { useEffect, useState } from 'react';
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <Header />
       <Sidebar />
     </div>

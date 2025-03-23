@@ -65,9 +65,18 @@ def surface_plot(tick, str1, str2, d1, d2):
     spline = SmoothBivariateSpline(x, y, z)
 
     Z = spline(tx, ty)
-    data = json.dump({
+    data = {
         "X": X,
         "Y": Y,
         "Z": Z
-    })
+    }
     return data
+
+
+tick = str(input("Enter ticker symbol: "))
+str1 = float(input("Enter min strike: "))
+str2 = float(input("Enter max strike: "))
+d1 = float(input("Enter min time: "))
+d2 = float(input("Enter max time: "))
+
+print(surface_plot(tick, str1, str2, d1, d2))
