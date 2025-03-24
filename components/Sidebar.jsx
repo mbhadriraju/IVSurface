@@ -20,7 +20,7 @@ function Sidebar(props) {
         console.log('Sending data to server:', data);
         
         // Use the full backend URL instead of a relative path
-        const backendUrl = 'https://studious-yodel-g4475945qw4q2wx4w-5000.app.github.dev/receive_data';
+        const backendUrl = 'localhost:5000/data';
         
         fetch(backendUrl, {
             method: 'POST',

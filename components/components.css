@@ -17,6 +17,11 @@
     height: 100vh;
 }
 
+.plot {
+  color: white;
+  font-size: 25pt;
+}
+
 button {
     resize: none;
     border-radius: 20px;

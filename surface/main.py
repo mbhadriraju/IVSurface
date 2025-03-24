@@ -5,6 +5,7 @@ from scipy.stats import norm
 from datetime import datetime, date
 from scipy.interpolate import SmoothBivariateSpline
 import json
+import matplotlib.pyplot as plt
 
 
 def opt_price(S, K, r, t, sigma, q, call):
@@ -27,6 +28,7 @@ def implied_vol(price, S, K, t, r, q, call):
     return init_sigma
 
 def surface_plot(tick, str1, str2, d1, d2):
+    str1, str2, d1, d2 = int(str1), int(str2), int(d1), int(d2)
     ticker = yf.Ticker(tick)
 
     prev_close = ticker.info["previousClose"]
@@ -71,12 +73,10 @@ def surface_plot(tick, str1, str2, d1, d2):
         "Z": Z
     }
     return data
-
-
-tick = str(input("Enter ticker symbol: "))
-str1 = float(input("Enter min strike: "))
-str2 = float(input("Enter max strike: "))
-d1 = float(input("Enter min time: "))
-d2 = float(input("Enter max time: "))
-
-print(surface_plot(tick, str1, str2, d1, d2))
+'''
+data = surface_plot("SPY", 400, 700, 0, 60)
+fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
+plt.plot(data["X"], data["Y"], data["Z"])
+surf = ax.plot_surface(data["X"], data["Y"], data["Z"], cmap='viridis', edgecolor='none', linewidth=0)
+fig.colorbar(surf)
+plt.show()'''
