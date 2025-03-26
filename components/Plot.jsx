@@ -6,7 +6,7 @@ function Plot(props) {
     const [data, setData] = useState([{}]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/members").then(
+        fetch("http://localhost:5000/send").then(
             res => res.json()
         ).then(
             data => {

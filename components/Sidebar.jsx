@@ -10,18 +10,14 @@ function Sidebar(props) {
 
     function exportData() {
         const data = {
-            "asset": asset || "SPY",
-            "strikeMin": strikeMin || "400",
-            "strikeMax": strikeMax || "700",
-            "timeMin": timeMin || "0",
-            "timeMax": timeMax || "252"
+            "asset": asset,
+            "strikeMin": strikeMin,
+            "strikeMax": strikeMax,
+            "timeMin": timeMin,
+            "timeMax": timeMax
         };
-
-        console.log('Sending data to server:', data);
         
-        // Use the full backend URL instead of a relative path
-        const backendUrl = 'localhost:5000/data';
-        
+        const backendUrl = 'http://localhost:5000/data';
         fetch(backendUrl, {
             method: 'POST',
             headers: {
@@ -30,16 +26,16 @@ function Sidebar(props) {
             body: JSON.stringify(data)
         })
         .then(response => {
-            console.log('Response status:', response.status);
+            console.log("Data Sent");
             return response.json();
         })
         .then(data => {
-            console.log('Success:', data);
-            alert('Data sent successfully!');
+            if (data.status === 'error') {
+                alert(data.message);
+            }
         })
         .catch((error) => {
-            console.error('Error:', error);
-            alert('Failed to send data.');
+            alert('Network Error, unable to send');
         });
     }
 
