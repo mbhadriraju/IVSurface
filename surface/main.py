@@ -4,8 +4,7 @@ from math import log, sqrt, exp
 from scipy.stats import norm
 from datetime import datetime, date
 from scipy.interpolate import SmoothBivariateSpline
-import json
-import matplotlib.pyplot as plt
+from flask import jsonify
 
 
 def opt_price(S, K, r, t, sigma, q, call):
@@ -67,16 +66,9 @@ def surface_plot(tick, str1, str2, d1, d2):
     spline = SmoothBivariateSpline(x, y, z)
 
     Z = spline(tx, ty)
-    data = {
-        "X": X,
-        "Y": Y,
-        "Z": Z
-    }
+    data = jsonify({
+        "X": X.tolist(),
+        "Y": Y.tolist(),
+        "Z": Z.tolist()
+    })
     return data
-'''
-data = surface_plot("SPY", 400, 700, 0, 60)
-fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
-plt.plot(data["X"], data["Y"], data["Z"])
-surf = ax.plot_surface(data["X"], data["Y"], data["Z"], cmap='viridis', edgecolor='none', linewidth=0)
-fig.colorbar(surf)
-plt.show()'''

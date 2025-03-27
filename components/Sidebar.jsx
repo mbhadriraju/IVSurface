@@ -31,7 +31,7 @@ function Sidebar(props) {
         })
         .then(data => {
             if (data.status === 'error') {
-                alert(data.message);
+                alert(data.issue);
             }
         })
         .catch((error) => {

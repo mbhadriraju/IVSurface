@@ -1,6 +1,11 @@
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-
+import yfinance as yf
+from surface.main import surface_plot, implied_vol
 app = Flask(__name__)
 CORS(app, resources={
     r"/*": {
@@ -10,25 +15,22 @@ CORS(app, resources={
     }
 })
 
-@app.route('/send')
-def send():
-    return jsonify({"hello": "world"})
-
 @app.route('/data', methods=['POST', 'OPTIONS'])
 def data():    
     try:
         data = request.get_json()
-        print(data)
         if not request.is_json:
-            return jsonify({'error': 'Invalid JSON'})
-        if not data:
-            return jsonify({'error': 'No data provided'})
+            raise Exception('Request is not JSON')
         if not data['asset'] or not data['strikeMin'] or not data['strikeMax'] or not data['timeMin'] or not data['timeMax']:
             raise Exception('Missing required fields')
-        return jsonify({'status': 'success', 'data': data})
+        if data['strikeMin'] >= data['strikeMax']:
+            raise Exception('Minimum strike price is greater than maximum strike price')
+        if data['timeMin'] >= data['timeMax']:
+            raise Exception('Minimum time to maturity is greater than maximum time to maturity')
+        surface_data = surface_plot(data['asset'], data['strikeMin'], data['strikeMax'], data['timeMin'], data['timeMax'])
+        return jsonify({'status': 'success', 'data': data, 'surface': surface_data})
     except Exception as e:
-        print("Error:", str(e))
-        return jsonify({'error': str(e)})
+        return jsonify({'status': 'error', 'issue': str(e)})
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
