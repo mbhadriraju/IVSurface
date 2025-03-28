@@ -9,7 +9,7 @@ function Sidebar(props) {
     const [timeMax, setTimeMax] = useState();
 
     function exportData() {
-        const data = {
+        const send_data = {
             "asset": asset,
             "strikeMin": strikeMin,
             "strikeMax": strikeMax,
@@ -21,17 +21,18 @@ function Sidebar(props) {
         fetch(backendUrl, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(send_data)
         })
         .then(response => {
             console.log("Data Sent");
             return response.json();
         })
-        .then(data => {
-            if (data.status === 'error') {
-                alert(data.issue);
+        .then(get_data => {
+            if (get_data.status === 'error') {
+                alert(get_data.issue);
             }
         })
         .catch((error) => {

@@ -66,9 +66,9 @@ def surface_plot(tick, str1, str2, d1, d2):
     spline = SmoothBivariateSpline(x, y, z)
 
     Z = spline(tx, ty)
-    data = jsonify({
+    data = {
         "X": X.tolist(),
         "Y": Y.tolist(),
         "Z": Z.tolist()
-    })
+    }
     return data
