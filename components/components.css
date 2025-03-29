@@ -18,8 +18,8 @@
 }
 
 .plot {
-  color: white;
-  font-size: 25pt;
+    color: white;
+    font-size: 20pt;
 }
 
 button {
@@ -46,10 +46,17 @@ button {
     transition: 400ms;
 }
 
-  button:hover {
+  button:hover:not(:disabled) {
     background-color: #252525;
     color: white;
     outline: 3px grey solid;
+  }
+
+  button:disabled {
+    background-color: grey;
+    color: dark grey;
+    outline: 3px grey solid;
+    cursor: not-allowed;
   }
 
 input {

@@ -4,7 +4,6 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-import yfinance as yf
 from surface.main import surface_plot, implied_vol
 app = Flask(__name__)
 CORS(app, resources={
@@ -15,7 +14,7 @@ CORS(app, resources={
     }
 })
 
-data = {'data': {}}
+data = None
 
 @app.route('/data', methods=['POST', 'OPTIONS'])
 def get_data():    
@@ -32,7 +31,6 @@ def get_data():
             raise Exception('Minimum strike price is greater than maximum strike price')
         if data['timeMin'] >= data['timeMax']:
             raise Exception('Minimum time to maturity is greater than maximum time to maturity')
-        send()
         return jsonify({'status': 'success', 'data': data})
     except Exception as e:
         print(e)
@@ -40,7 +38,10 @@ def get_data():
 
 @app.route('/send', methods=['GET', 'OPTIONS'])
 def send():
-    return jsonify(surface_plot(data['asset'], data['strikeMin'], data['strikeMax'], data['timeMin'], data['timeMax']))
+    if not data:
+        return jsonify({'status': 'error', 'issue': 'No data received'})
+    surf_data = surface_plot(data['asset'], data['strikeMin'], data['strikeMax'], data['timeMin'], data['timeMax'])
+    return jsonify(surf_data)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)

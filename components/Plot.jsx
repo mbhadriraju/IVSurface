@@ -2,25 +2,15 @@ import "./components.css";
 import { useState } from 'react';
 import { useEffect } from 'react';
 
+
 function Plot(props) {
-    const [data, setData] = useState([{}]);
-
-    useEffect(() => {
-        fetch("http://localhost:5000/send").then(
-            res => res.json()
-        ).then(
-            data => {
-                setData(data)
-            }
-         )
-    }, []);
-
-
+    const [data, setData] = useState();
+    const [loading, setLoading] = useState(false);
 
     return (
         <div className="plot">
         </div>
-    )
+    );
 }
 
 export default Plot;

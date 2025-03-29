@@ -62,13 +62,15 @@ def surface_plot(tick, str1, str2, d1, d2):
     ty = np.linspace(min(y), max(y), len(y))
 
     X, Y = np.meshgrid(tx, ty)
+    X = X.tolist()
+    Y = Y.tolist()
 
     spline = SmoothBivariateSpline(x, y, z)
 
-    Z = spline(tx, ty)
+    Z = spline(tx, ty).tolist()
     data = {
-        "X": X.tolist(),
-        "Y": Y.tolist(),
-        "Z": Z.tolist()
+        "X": X,
+        "Y": Y,
+        "Z": Z
     }
     return data
