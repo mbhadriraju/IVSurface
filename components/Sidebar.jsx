@@ -11,66 +11,45 @@ function Sidebar(props) {
     const [data, setData] = useState();
     const [clicked, setClicked] = useState(false);
 
-    function exportData() {
-        setClicked(true);
-        const send_data = {
-            "asset": asset,
-            "strikeMin": strikeMin,
-            "strikeMax": strikeMax,
-            "timeMin": timeMin,
-            "timeMax": timeMax
-        };
-        
-        const backendUrl = 'http://localhost:5000/data';
-        fetch(backendUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify(send_data)
-        })
-        .then(response => {
-            console.log("Data Sent");
-            return response.json();
-        })
-        .then(get_data => {
-            if (get_data.status === 'error') {
-                alert(get_data.issue);
-            }
-            else {
-                console.log(get_data);
-            }
-        })
-        .catch((error) => {
-            alert(error);
-        });
-    }
+    async function exportData() {
+        try {
+            setClicked(true);
+            setLoading(true);
+            const send_data = {
+                "asset": asset,
+                "strikeMin": strikeMin,
+                "strikeMax": strikeMax,
+                "timeMin": timeMin,
+                "timeMax": timeMax
+            };
 
-    const fetchData = async() => {
-        await exportData();
-        setLoading(true);
-        fetch("http://localhost:5000/send")
-        .then(response => {
-            if (!response.ok) {
-                alert("Unable to fetch data");
+            const backendUrl = 'http://localhost:5000/data';
+            const sendResponse = await fetch(backendUrl, {
+                method: 'POST',
+                
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                
+                body: JSON.stringify(send_data)
+            });
+            if (!sendResponse.ok) {
+                throw new Error("Failed to send data to backend");
             }
-            return response.json();
-        })
-        .then(responseData => {
-                console.log("Data Received: ");
-                console.log(responseData);
-                setData(responseData);
-                setLoading(false);
-                setClicked(false);
-        })
-        .catch(error => {
-            console.log(data);
+            const getData = await sendResponse.json();
+            if (getData.status === "error") {
+                throw new Error(getData.issue);
+            }
+            setData(getData);
+        } catch (error) {
+            console.error("Error:", error);
             alert(error);
-            setLoading(false);
+        } finally {
+            setLoading(false);  
             setClicked(false);
-        })
-    };
+        }
+    }
 
     return (
         <div className="sidebar">
@@ -84,7 +63,7 @@ function Sidebar(props) {
             <input onChange={e => setTimeMin(e.target.value)}></input>
             <p>Time to Expiry Maximum:</p>
             <input onChange={e => setTimeMax(e.target.value)}></input>
-            <button onClick={fetchData} disabled={clicked}>
+            <button onClick={exportData} disabled={clicked}>
                 {loading ? 'Loading...' : 'Plot'}
             </button>
         </div>

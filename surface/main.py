@@ -4,7 +4,7 @@ from math import log, sqrt, exp
 from scipy.stats import norm
 from datetime import datetime, date
 from scipy.interpolate import SmoothBivariateSpline
-from flask import jsonify
+
 
 
 def opt_price(S, K, r, t, sigma, q, call):
@@ -29,7 +29,11 @@ def implied_vol(price, S, K, t, r, q, call):
 def surface_plot(tick, str1, str2, d1, d2):
     str1, str2, d1, d2 = int(str1), int(str2), int(d1), int(d2)
     ticker = yf.Ticker(tick)
-
+    info = None
+    try:
+        info = ticker.info
+    except:
+        return {'status': 'error', 'issue': 'Invalid ticker symbol'}
     prev_close = ticker.info["previousClose"]
 
     exps = ticker.options
@@ -50,16 +54,14 @@ def surface_plot(tick, str1, str2, d1, d2):
                     options.append([expiry, strike, chain.puts["impliedVolatility"][i]])
 
 
-
-
-
     length = len(options)
     x = [(datetime.strptime(options[i][0], "%Y-%m-%d").date() - date.today()).days for i in range(length)]
     y = [options[i][1] / prev_close for i in range(length)]
     z = [options[i][2] for i in range(length)]
 
-    tx = np.linspace(min(x), max(x), len(x))
-    ty = np.linspace(min(y), max(y), len(y))
+    num_points = 100
+    tx = np.linspace(min(x), max(x), num_points)
+    ty = np.linspace(min(y), max(y), num_points)
 
     X, Y = np.meshgrid(tx, ty)
     X = X.tolist()
@@ -69,6 +71,7 @@ def surface_plot(tick, str1, str2, d1, d2):
 
     Z = spline(tx, ty).tolist()
     data = {
+        'status': 'success',
         "X": X,
         "Y": Y,
         "Z": Z
