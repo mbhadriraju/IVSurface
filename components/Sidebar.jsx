@@ -1,7 +1,8 @@
 import "./components.css";
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import Plot from './Plot.jsx';
 
-function Sidebar(props) {
+function Sidebar() {
     const [asset, setAsset] = useState();
     const [strikeMin, setStrikeMin] = useState();
     const [strikeMax, setStrikeMax] = useState();
@@ -52,20 +53,25 @@ function Sidebar(props) {
     }
 
     return (
-        <div className="sidebar">
-            <p>Asset:</p>
-            <input onChange={e => setAsset(e.target.value)}></input>
-            <p>Strike Price Minimum:</p>
-            <input onChange={e => setStrikeMin(e.target.value)}></input>
-            <p>Strike Price Maximum:</p>
-            <input onChange={e => setStrikeMax(e.target.value)}></input>
-            <p>Time to Expiry Minimum:</p>
-            <input onChange={e => setTimeMin(e.target.value)}></input>
-            <p>Time to Expiry Maximum:</p>
-            <input onChange={e => setTimeMax(e.target.value)}></input>
-            <button onClick={exportData} disabled={clicked}>
-                {loading ? 'Loading...' : 'Plot'}
-            </button>
+        <div>
+            <div className="sidebar">
+                <p>Asset:</p>
+                <input onChange={e => setAsset(e.target.value)}></input>
+                <p>Strike Price Minimum:</p>
+                <input onChange={e => setStrikeMin(e.target.value)}></input>
+                <p>Strike Price Maximum:</p>
+                <input onChange={e => setStrikeMax(e.target.value)}></input>
+                <p>Time to Expiry Minimum:</p>
+                <input onChange={e => setTimeMin(e.target.value)}></input>
+                <p>Time to Expiry Maximum:</p>
+                <input onChange={e => setTimeMax(e.target.value)}></input>
+                <button onClick={exportData} disabled={clicked}>
+                    {loading ? 'Loading...' : 'Plot'}
+                </button>
+            </div>
+            <div>
+                <Plot plotData={data}/>
+            </div>
         </div>
     )
 }

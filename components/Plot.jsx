@@ -4,11 +4,15 @@ import { useEffect } from 'react';
 
 
 function Plot(props) {
-    const [data, setData] = useState();
-    const [loading, setLoading] = useState(false);
+    useEffect(() => {
+        plotSurface(props.plotData);
+    }, [props.plotData]);
 
+    function plotSurface(data) {
+        return;
+    }
     return (
-        <div className="plot">
+        <div className="plot" id="surface">
         </div>
     );
 }

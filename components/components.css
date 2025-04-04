@@ -8,7 +8,7 @@
 .sidebar {
     color: white;
     font-size: 15pt;
-    margin-left: 40px;
+    padding-left: 40px;
     padding-right: 40px;
     border-right: 1px solid #fff;
     max-width: fit-content;
@@ -18,8 +18,17 @@
 }
 
 .plot {
-    color: white;
-    font-size: 20pt;
+  color: white;
+  font-size: 20pt;
+  position: absolute;
+  left: 320px;
+  right: 0;
+  top: 150px;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% - 320px);
 }
 
 button {
