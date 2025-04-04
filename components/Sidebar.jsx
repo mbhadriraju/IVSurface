@@ -1,6 +1,6 @@
 import "./components.css";
 import { useState } from 'react';
-import Plot from './Plot.jsx';
+import Surface from './Surface.jsx';
 
 function Sidebar() {
     const [asset, setAsset] = useState();
@@ -70,7 +70,7 @@ function Sidebar() {
                 </button>
             </div>
             <div>
-                <Plot plotData={data}/>
+                <Surface plotData={data}/>
             </div>
         </div>
     )
