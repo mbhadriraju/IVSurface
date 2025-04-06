@@ -40,12 +40,12 @@ function Sidebar() {
             }
             const getData = await sendResponse.json();
             if (getData.status === "error") {
+                alert(getData.issue);
                 throw new Error(getData.issue);
             }
             setData(getData);
         } catch (error) {
             console.error("Error:", error);
-            alert(error);
         } finally {
             setLoading(false);  
             setClicked(false);

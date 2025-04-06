@@ -3,7 +3,7 @@ import numpy as np
 from math import log, sqrt, exp
 from scipy.stats import norm
 from datetime import datetime, date
-
+from scipy.interpolate import SmoothBivariateSpline
 
 def opt_price(S, K, r, t, sigma, q, call):
     d1 = (log(S / K) + ((r - q + ((sigma ** 2) / 2)) * t)) / (sigma * sqrt(t))
@@ -51,16 +51,36 @@ def surface_plot(tick, str1, str2, d1, d2):
                 if strike <= str2 and strike >= str1:
                     options.append([expiry, strike, chain.puts["impliedVolatility"][i]])
 
-
     length = len(options)
+    if length == 0:
+        return {'status': 'error', 'issue': 'No options found in the specified range'}
     x = [(datetime.strptime(options[i][0], "%Y-%m-%d").date() - date.today()).days for i in range(length)]
-    y = [float(options[i][1]) / float(prev_close) for i in range(length)]
-    z = [float(options[i][2]) for i in range(length)]
+    y = [options[i][1] / prev_close for i in range(length)]
+    z = [options[i][2] for i in range(length)]
+    x_ = []
+    y_ = []
+    z_ = []
+    for i in range(length):
+        if z[i] > .0001:
+            x_.append(x[i])
+            y_.append(y[i])
+            z_.append(z[i])
+
+
+    xi = np.linspace(min(x_), max(x_), 100)
+    yi = np.linspace(min(y_), max(y_), 100)
+    X, Y = np.meshgrid(xi, yi)
+    z = np.array(z_)
+    spline = SmoothBivariateSpline(x_, y_, z_)
+    Z = spline(xi, yi)
     data = {
         'status': 'success',
-        "X": x,
-        "Y": y,
-        "Z": z
+        "X": X.tolist(),
+        "Y": Y.tolist(),
+        "Z": Z.tolist()
     }
     return data
+
+
+
 

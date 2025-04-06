@@ -10,7 +10,7 @@ function Surface(props) {
             x: props.plotData['X'],
             y: props.plotData['Y'],
             z: props.plotData['Z'],
-            type: 'scatter3d'
+            type: 'surface'
         }]
         const layout = {
             title: {text: 'Volatility Surface'},
