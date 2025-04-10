@@ -22,9 +22,14 @@ def get_data():
         data = request.get_json()
         if not data['asset'] or not data['strikeMin'] or not data['strikeMax'] or not data['timeMin'] or not data['timeMax']: raise Exception('Missing required fields')
         if not data['strikeMin'].isdigit() or not data['strikeMax'].isdigit() or not data['timeMin'].isdigit() or not data['timeMax'].isdigit(): raise Exception('Invalid data types. Please enter integers')
-        if data['strikeMin'] >= data['strikeMax']: raise Exception('Minimum strike price is greater than maximum strike price')
-        if data['timeMin'] >= data['timeMax']: raise Exception('Minimum time to maturity is greater than maximum time to maturity')
-        g.surf_data = surface_plot(data['asset'], data['strikeMin'], data['strikeMax'], data['timeMin'], data['timeMax'])
+        smin = int(data['strikeMin'])
+        smax = int(data['strikeMax'])
+        tmin = int(data['timeMin'])
+        tmax = int(data['timeMax'])
+        asset = data['asset']
+        if smin >= smax: raise Exception('Minimum strike price is greater than maximum strike price')
+        if tmin >= tmax: raise Exception('Minimum time to maturity is greater than maximum time to maturity')
+        g.surf_data = surface_plot(asset, smin, smax, tmin, tmax)
         return jsonify(g.surf_data)
     except Exception as e:
         return jsonify({'status': 'error', 'issue': str(e)})

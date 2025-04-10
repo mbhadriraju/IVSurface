@@ -44,12 +44,12 @@ def surface_plot(tick, str1, str2, d1, d2):
             for i in range(len(chain.calls["strike"])):
                 strike = chain.calls["strike"][i]
                 if strike <= str2 and strike >= str1:
-                    options.append([expiry, strike, chain.calls["impliedVolatility"][i]])
+                    options.append([expiry, strike, chain.calls['impliedVolatility'][i]])
             
             for i in range(len(chain.puts["strike"])):
                 strike = chain.puts["strike"][i]
                 if strike <= str2 and strike >= str1:
-                    options.append([expiry, strike, chain.puts["impliedVolatility"][i]])
+                    options.append([expiry, strike, chain.puts['impliedVolatility'][i]])
 
     length = len(options)
     if length == 0:
@@ -80,7 +80,3 @@ def surface_plot(tick, str1, str2, d1, d2):
         "Z": Z.tolist()
     }
     return data
-
-
-
-

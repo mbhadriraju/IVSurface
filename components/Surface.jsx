@@ -10,15 +10,27 @@ function Surface(props) {
             x: props.plotData['X'],
             y: props.plotData['Y'],
             z: props.plotData['Z'],
+            showscale: false,
             type: 'surface'
         }]
         const layout = {
             title: {text: 'Volatility Surface'},
+            paper_bgcolor: 'rgba(0,0,0,0)',  
+            plot_bgcolor: 'rgba(0,0,0,0)',  
+            showlegend: false,
             autosize: true,
+            scene: {
+                xaxis: {title: {text: 'Time to Expiry'}},
+                yaxis: {title: {text: 'Strike'}},
+                zaxis: {title: {text: 'Volatility'}},
+            },
+            font: {
+                color: 'white'
+            }
         };
         return (
             <div className="plot" id="surface">
-                <Plot data={data} layout={layout}/>
+                <Plot data={data} layout={layout} config={{response: true}} style={{width: "100%", height: "100%"}}/>
             </div> 
         );
     }
