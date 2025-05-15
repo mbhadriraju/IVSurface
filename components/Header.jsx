@@ -1,11 +1,15 @@
 import './components.css';
+import Navbar from './Navbar.jsx';
 
-function Header(props) {
-    return(
+function Header() {
+    return (
         <div className="header">
-            <h1>Volatility Surface Calculator</h1>
+            <div>
+                <h1>The Trading Hub</h1>
+            </div>
+            <Navbar />
         </div>
-    )
+    );
 }
 
-export default Header
+export default Header;

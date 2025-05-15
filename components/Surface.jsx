@@ -14,7 +14,6 @@ function Surface(props) {
             type: 'surface'
         }]
         const layout = {
-            title: {text: 'Volatility Surface'},
             paper_bgcolor: 'rgba(0,0,0,0)',  
             plot_bgcolor: 'rgba(0,0,0,0)',  
             showlegend: false,
@@ -28,9 +27,15 @@ function Surface(props) {
                 color: 'white'
             }
         };
+
+        const config = {
+            displayModeBar: false,
+            responsive: true,
+            scrollZoom: true,
+        };
         return (
             <div className="plot" id="surface">
-                <Plot data={data} layout={layout} config={{response: true}} style={{width: "100%", height: "100%"}}/>
+                <Plot data={data} layout={layout} config={config} style={{width: "100%", height: "100%"}}/>
             </div> 
         );
     }
